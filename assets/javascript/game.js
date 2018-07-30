@@ -11,7 +11,7 @@ function resetGame() {
     //Assign Random numbers
     targetNumber = 0;
     crystals = [];
-    targetNumber = Math.floor((Math.random() * 120 - 19) + 19);
+    targetNumber = Math.floor(Math.random() * (120 - 19 +1 )) + 19;
     for (x = 0; x !== 4; ++x ) {
         crystals[x] = Math.floor((Math.random() * 12) + 1);
     }
@@ -30,6 +30,12 @@ function resetGame() {
     }
     
     totalScore =0;
+    console.log("Crystal 1 Value = " + crystals[0]);
+    console.log("Crystal 2 Value = " + crystals[1]);
+    console.log("Crystal 3 Value = " + crystals[2]);
+    console.log("Crystal 4 Value = " + crystals[3]);
+    console.log("Target Number = " + targetNumber);
+        console.log("Your total score = " + totalScore);
 }
 
 function testEven(num) {
@@ -48,12 +54,14 @@ function checkGame() {
         console.log("You WIN!!");
         console.log("Wins: " + Wins);
         console.log("Losses: " + Loss);
+        console.log("New totalScore: " + totalScore + " Target #: " + targetNumber);
         resetGame();
     } else if (totalScore > targetNumber) {
         Loss++;
         console.log("Sorry you lost.");
         console.log("Wins: " + Wins);
         console.log("Losses: " + Loss);
+        console.log("New totalScore: " + totalScore + " Target #: " + targetNumber);
         resetGame();
     } else {
         console.log("New totalScore: " + totalScore + " Target #: " + targetNumber);
@@ -89,13 +97,4 @@ $(document).ready(function() {
       totalScore = totalScore + crystals[3];
       checkGame();
   });
-
-console.log("Target Number = " + targetNumber);
-console.log("Crystal 1 Value = " + crystals[0]);
-console.log("Crystal 2 Value = " + crystals[1]);
-console.log("Crystal 3 Value = " + crystals[2]);
-console.log("Crystal 4 Value = " + crystals[3]);
-console.log("Your total score = " + totalScore);
-console.log("Wins: " + Wins);
-console.log("Losses: " + Loss);
 });
