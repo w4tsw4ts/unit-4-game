@@ -1,0 +1,13 @@
+body {
+    background-image: ("assets/images/vintage-concrete.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+.crystal-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  

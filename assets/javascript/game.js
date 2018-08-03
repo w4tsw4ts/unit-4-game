@@ -12,8 +12,15 @@ function resetGame() {
     targetNumber = 0;
     crystals = [];
     targetNumber = Math.floor(Math.random() * (120 - 19 +1 )) + 19;
-    for (x = 0; x !== 4; ++x ) {
-        crystals[x] = Math.floor((Math.random() * 12) + 1);
+    for (var c = 0; c < 4; c++) {
+        var numberRandom = Math.floor(Math.random() * 12) + 1;
+        if (crystals.indexOf(numberRandom) === -1) {
+            crystals.push(numberRandom);
+            // console.log("numberRandom: " + numberRandom);
+            // console.log("Crystals Num: " + crystals);
+        } else {
+            c--;
+        }   
     }
     
     // Test to see if crystal has at least one odd or even number.
@@ -30,22 +37,14 @@ function resetGame() {
     }
     
     totalScore =0;
-    console.log("Crystal 1 Value = " + crystals[0]);
-    console.log("Crystal 2 Value = " + crystals[1]);
-    console.log("Crystal 3 Value = " + crystals[2]);
-    console.log("Crystal 4 Value = " + crystals[3]);
     console.log("Target Number = " + targetNumber);
-        console.log("Your total score = " + totalScore);
+    console.log("Your total score = " + totalScore);
 }
 
 function testEven(num) {
     if ( num % 2 == 0) {
         return true;
     } 
-}
-
-function stats() {
-
 }
 
 function checkGame() {
@@ -70,12 +69,7 @@ function checkGame() {
 
 // Start Game
 resetGame();
-// Validate we have at least one even and one odd value crystal
-while (odd === 0 || even === 0) {
-    console.log("We do NOT have at least one even and one odd value crystal");
-    resetGame();
-}
-// Validate we have unique numbers
+
 
 $(document).ready(function() {
   $("#crystal0").on("click", function() {
