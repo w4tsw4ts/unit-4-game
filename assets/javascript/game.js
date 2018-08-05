@@ -72,6 +72,12 @@ resetGame();
 
 
 $(document).ready(function() {
+  $("#crystal0").html("<img src='assets/images/red_crystal.png' />");
+  $("#crystal1").html("<img src='assets/images/blue_crystal.png' />");
+  $("#crystal2").html("<img src='assets/images/yellow_crystal.png' />");
+  $("#crystal3").html("<img src='assets/images/green_crystal.png' />");
+
+
   $("#crystal0").on("click", function() {
       totalScore = totalScore + crystals[0];
       checkGame();
