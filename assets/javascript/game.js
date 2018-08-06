@@ -39,6 +39,7 @@ function resetGame() {
     totalScore =0;
     console.log("Target Number = " + targetNumber);
     console.log("Your total score = " + totalScore);
+    $("#target-score").text(targetNumber);
 }
 
 function testEven(num) {
@@ -54,6 +55,7 @@ function checkGame() {
         console.log("Wins: " + Wins);
         console.log("Losses: " + Loss);
         console.log("New totalScore: " + totalScore + " Target #: " + targetNumber);
+        $("#wins").text(Wins);
         resetGame();
     } else if (totalScore > targetNumber) {
         Loss++;
@@ -61,9 +63,12 @@ function checkGame() {
         console.log("Wins: " + Wins);
         console.log("Losses: " + Loss);
         console.log("New totalScore: " + totalScore + " Target #: " + targetNumber);
+        $("#losses").text(Loss);
         resetGame();
     } else {
         console.log("New totalScore: " + totalScore + " Target #: " + targetNumber);
+        $("#target-score").text(targetNumber);
+        $("#total-score").text(totalScore);
     }
 }
 
