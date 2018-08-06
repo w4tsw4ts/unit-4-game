@@ -40,6 +40,7 @@ function resetGame() {
     console.log("Target Number = " + targetNumber);
     console.log("Your total score = " + totalScore);
     $("#target-score").text(targetNumber);
+    $("#total-score").text(totalScore);
 }
 
 function testEven(num) {
